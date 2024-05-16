@@ -59,15 +59,10 @@ java -jar ./artifacts/aqa-shop.jar -P:jdb.url=jdbc:mysql://localhost:3306/app
 java -jar ./artifacts/aqa-shop.jar -P:jdb.url=jdbc:postgres://localhost:5432/app
 ```
 5. Запустить автотесты, открыв новую вкладку в терминале IDE, используя команду:
-* Для запуска тестов с базой данных mysql выполнить команду:
+* Для запуска тестов выполнить команду:
 ```
 ./gradlew clean test --info
 ```
-* Для запуска тестов с базой данных postgre выполнить команду:
-```
-./gradlew clean test -Ddb.url=jdbc:postgre://localhost:5432/app
-```
-
 *Остановить SUT* - использовать сочетание клавиш Ctrl+C.
 
 *Остановить контейнер* - в терминале IDE, используя команду:

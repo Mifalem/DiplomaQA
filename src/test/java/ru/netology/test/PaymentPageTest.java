@@ -431,4 +431,5 @@ public class PaymentPageTest {
                 getSpecifiedMonth(1), getYear(0), getHolder(), getCvc()));
         paymentPage.verifyNotificationSuccessPayment();
     }
+
     }
