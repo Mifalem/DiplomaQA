@@ -38,7 +38,7 @@ public class PaymentPageTest {
     }
 
     @Test
-    @DisplayName("1. отправка формы оплаты по активной карте с заполнением всех полей валидными данными")
+    @DisplayName("1. отправка формы оплаты по активной карте с заполнением всех полей валидными данными+проверка записи в БД")
     public void shouldPaymentWhenAllDataValid() {
         paymentPage.verifyFormName();
         paymentPage.fillForm(new DataHelper.CardInfo(getApprovedCardNumber(),
@@ -48,7 +48,8 @@ public class PaymentPageTest {
     }
 
     @Test
-    @DisplayName("2. Отправка формы оплаты по активной карте с заполнением всех полей валидными данными. Имя через тире")
+    @DisplayName("2. Отправка формы оплаты по активной карте с заполнением всех полей валидными данными. Имя через тире" +
+            "+проверка записи в БД")
     public void shouldPaymentWhenFirstNameWithDash() {
         paymentPage.verifyFormName();
         paymentPage.fillForm(new DataHelper.CardInfo(getApprovedCardNumber(),
@@ -58,7 +59,8 @@ public class PaymentPageTest {
     }
 
     @Test
-    @DisplayName("3. Отправка формы оплаты по активной карте с заполнением всех полей валидными данными. Фамилия через тире")
+    @DisplayName("3. Отправка формы оплаты по активной карте с заполнением всех полей валидными данными. Фамилия через " +
+            "тире+проверка записи в БД")
     public void shouldPaymentWhenLastNameWithDash() {
         paymentPage.verifyFormName();
         paymentPage.fillForm(new DataHelper.CardInfo(getApprovedCardNumber(),
@@ -68,7 +70,8 @@ public class PaymentPageTest {
     }
 
     @Test
-    @DisplayName("4. Отправка формы оплаты по активной карте с заполнением всех полей валидными данными. Имя и фамилия через тире")
+    @DisplayName("4. Отправка формы оплаты по активной карте с заполнением всех полей валидными данными. " +
+            "Имя и фамилия через тире+проверка записи в БД")
     public void shouldPaymentWhenNameWithDash() {
         paymentPage.verifyFormName();
         paymentPage.fillForm(new DataHelper.CardInfo(getApprovedCardNumber(),
@@ -90,7 +93,8 @@ public class PaymentPageTest {
     }
 
     @Test
-    @DisplayName("6. Отправка формы оплаты по заблокированной карте с заполнением всех полей валидными данными")
+    @DisplayName("6. Отправка формы оплаты по заблокированной карте с заполнением всех полей валидными данными" +
+            "+проверка записи в БД")
     public void shouldNotPaymentWhenCardDeclined() {
         paymentPage.verifyFormName();
         paymentPage.fillForm(new DataHelper.CardInfo(getDeclinedCardNumber(),
@@ -424,7 +428,8 @@ public class PaymentPageTest {
     }
 
     @Test
-    @DisplayName("43. Отправка формы оплаты по активной карте с указанием следующего (от текущего) месяца и текущего года")
+    @DisplayName("43. Отправка формы оплаты по активной карте с указанием следующего (от текущего) месяца и текущего " +
+            "года")
     public void shouldPaymentWhenCardDateIsNextCurrent() {
         paymentPage.verifyFormName();
         paymentPage.fillForm(new DataHelper.CardInfo(getApprovedCardNumber(),
